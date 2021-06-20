@@ -36,15 +36,15 @@ Yapay sinir ağları (YSA), bir girdi katmanı, bir veya daha fazla gizli katman
 A convolutional neural network (ConvNet / Convolutional neural networks -CNN) is a deep learning algorithm that can take an input image and separate various aspects/objects in the image.
 Convolutional neural networks are deep neural networks that are mainly used to classify images (for example, to name what they see), cluster by similarity (photo search), and perform object recognition in scenes.
 
---  CNN learns the filters automatically without mentioning it explicitly. These filters help in extracting the right and relevant features from the input data.
---  CNN captures the  **spatial features**  from an image. Spatial features refer to the arrangement of pixels and the relationship between them in an image. They help us in identifying the object accurately, the location of an object, as well as its relation with other objects in an image.
+-   CNN learns the filters automatically without mentioning it explicitly. These filters help in extracting the right and relevant features from the input data.
+-   CNN captures the  **spatial features**  from an image. Spatial features refer to the arrangement of pixels and the relationship between them in an image. They help us in identifying the object accurately, the location of an object, as well as its relation with other objects in an image.
 
 
 (Bir evrişimsel sinir ağı (ConvNet / Convolutional neural networks -CNN), bir girdi görüntüsünü alıp, görüntüdeki çeşitli görünüşleri/nesneleri birbirinden ayırabilen derin öğrenme algoritmasıdır.
 Evrişimli sinir ağları, temel olarak görüntüleri sınıflandırmak (örneğin gördüklerini isimlendirmek), benzerlikle kümelemek (fotoğraf arama) ve sahnelerde nesne tanıma yapmak için kullanılan derin yapay sinir ağlarıdır.
 
--- CNN, filtreleri açıkça belirtmeden otomatik olarak öğrenir. Bu filtreler, giriş verilerinden doğru ve ilgili özelliklerin çıkarılmasına yardımcı olur.
--- CNN bir görüntüden **uzamsal özellikleri** yakalar . Uzamsal özellikler, bir görüntüdeki piksellerin düzenini ve aralarındaki ilişkiyi ifade eder. Nesneyi, bir nesnenin konumunu ve bir görüntüdeki diğer nesnelerle ilişkisini doğru bir şekilde tanımlamamıza yardımcı olurlar.)
+-   CNN, filtreleri açıkça belirtmeden otomatik olarak öğrenir. Bu filtreler, giriş verilerinden doğru ve ilgili özelliklerin çıkarılmasına yardımcı olur.
+-   CNN bir görüntüden **uzamsal özellikleri** yakalar . Uzamsal özellikler, bir görüntüdeki piksellerin düzenini ve aralarındaki ilişkiyi ifade eder. Nesneyi, bir nesnenin konumunu ve bir görüntüdeki diğer nesnelerle ilişkisini doğru bir şekilde tanımlamamıza yardımcı olurlar.)
  ![enter image description here](https://www.researchgate.net/publication/326152216/figure/fig2/AS:644307941879809@1530626392505/Deep-convolutional-neural-network-DCNN-architecture-A-schematic-diagram-of-AlexNet.png)
  ## What is segmentation task in NN?
  Image segmentation is the process of classifying each pixel in an image belonging to a certain class and hence can be thought of as a classification problem per pixel. semantic segmentation falls under supervised learning. There are two types of segmentation techniques;
