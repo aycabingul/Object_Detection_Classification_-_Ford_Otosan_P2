@@ -142,6 +142,8 @@ CUDA is a parallel computing platform and programming model developed by Nvidia 
 # Design Segmentation Model
 ## -   What is the difference between CNN and Fully CNN (FCNN) ?
 FCNN(Fully Convolutional Neural Network), unlike the classic CNN, which use the Fully Connected layers after the Convolutional layers in the network, the FCNN can take input of arbitrary size. U-Net is also a network structure based on FCN. Fully convolutional training takes the whole M x M image and produces outputs for all subimages in a single ConvNet forward pass.
+There was a need for a network which didn’t have any restrictions on input image size and could perform image classification task at hand. The first thing that struck me was fully convolutional networks (FCNs). FCN is a network that does not contain any “Dense” layers (as in traditional CNNs) instead it contains 1x1 convolutions that perform the task of fully connected layers (Dense layers).
+So if we don't want to be limited to a fixed size in the input image, we can use FCNN.
 
 ## -   What are the different layers on CNN ?
 There are three types of layers that make up the CNN which are the convolutional layers, pooling layers, and fully-connected (FC) layers.
