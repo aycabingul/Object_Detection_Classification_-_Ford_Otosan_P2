@@ -7,7 +7,9 @@
 ### Supervised learning;
 It consists of learning to map input data to known targets (also called annotations), given a set of examples (often annotated by humans).
 
+
 (Bir veri seti üzerindeki girdilerden bilinen çıktılara/hedeflere olan eşleştirmeyi öğrenmeyi kapsar.
+
 ### Unsupervised learning;
 This branch of machine learning consists of finding interesting transformations of the input data without the help of any targets, for the purposes of data visualization, data compression, or data denoising, or to better understand the correlations present in the data at hand.
 The main distinction between the two approaches is the use of labeled datasets. To put it simply, supervised learning uses labeled input and output data, while an unsupervised learning algorithm does not.
@@ -18,11 +20,13 @@ The main distinction between the two approaches is the use of labeled datasets. 
 ## -   What is Deep Learning?
 Deep learning is a specific subfield of machine learning: a new take on learning representations from data that puts an emphasis on learning successive layers of increasingly meaningful representations. The deep in **deep learning** isn’t a reference to any kind of deeper understanding achieved by the approach; rather, it stands for this idea of successive layers of representations. How many layers contribute to a model of the data is called the *depth* of the model.
 
+
 (Derin öğrenme, birbirini takip eden katmanlarda veriler işlenirken giderek artan şekilde daha kullanışlı gösterimler elde edilebilen makine öğrenmesinin bir alt alanıdır. Derin derken kastedilen **derin öğrenmenin** birtakım derin bilgiler elde etmesi değil, birbirini takip eden gösterim katmanları ifade edilmektedir. Modeldeki katman modelin *derinliğini* oluşturmaktadır.)
 ## -   What is Neural Network (NN)?
 Modern deeplearning often involves tens or even hundreds of successive layers of representations and they’re all learned automatically from exposure to training data. Meanwhile, other approaches to machine learning tend to focus on learning only one or two layers of representations of the data; hence, they’re sometimes called shallow learning. In deep learning, these layered representations are (almost always) learned via models called neural networks, structured in literal layers stacked on top of each other.
 
 Artificial neural networks (ANNs) are comprised of a node layers, containing an input layer, one or more hidden layers, and an output layer. Each node, or artificial neuron, connects to another and has an associated weight and threshold. If the output of any individual node is above the specified threshold value, that node is activated, sending data to the next layer of the network. Otherwise, no data is passed along to the next layer of the network.
+
 
 (Modern derin öğrenme modelleri, onlarca hatta yüzlerce birbirini takip eden katmanlar içermektedir. Oysa diğer makine öğrenme algoritmaları, genelde bir veya iki katmandan oluşur ki bazen *sığ öğrenme* olarak da adlandırılırlar. Bu katmanlı gösterim, **sinir ağı** diye adlandırılan ve birbirini takip eden katmanları olan model sayesinde öğrenilmektedir.
 
@@ -33,7 +37,7 @@ A convolutional neural network (ConvNet / Convolutional neural networks -CNN) is
 Convolutional neural networks are deep neural networks that are mainly used to classify images (for example, to name what they see), cluster by similarity (photo search), and perform object recognition in scenes.
 
 --   CNN learns the filters automatically without mentioning it explicitly. These filters help in extracting the right and relevant features from the input data.
---  CNN captures the  **spatial features**  from an image. Spatial features refer to the arrangement of pixels and the relationship between them in an image. They help us in identifying the object accurately, the location of an object, as well as its relation with other objects in an image
+--  CNN captures the  **spatial features**  from an image. Spatial features refer to the arrangement of pixels and the relationship between them in an image. They help us in identifying the object accurately, the location of an object, as well as its relation with other objects in an image.
 
 
 (Bir evrişimsel sinir ağı (ConvNet / Convolutional neural networks -CNN), bir girdi görüntüsünü alıp, görüntüdeki çeşitli görünüşleri/nesneleri birbirinden ayırabilen derin öğrenme algoritmasıdır.
@@ -74,6 +78,7 @@ Tüm sınıflandırma görevleri, etiketlenmiş veri kümelerine bağlıdır; ya
 ## Compare segmentation and classification in NN.
 The difference between segmentation and classification is clear at some extend. And there is a one difference between both of them. The classification process is easier than segmentation, in classification all objects in a single image is grouped or categorized into a single class. While in segmentation each object of a single class in an image is highlighted with different shades to make them recognizable to computer vision.
 
+
 (Segmentasyon ve sınıflandırma arasındaki fark bir dereceye kadar açıktır. Ve ikisi arasında tek bir fark var. Sınıflandırma işlemi segmentasyondan daha kolaydır, sınıflandırmada tek bir görüntüdeki tüm nesneler tek bir sınıfa gruplanır veya kategorize edilir. Segmentasyon sırasında, bir görüntüdeki tek bir sınıfın her bir nesnesi, bilgisayarla görüye tanınabilmesi için farklı gölgelerle vurgulanır.)
 
 ## -   What is data and dataset difference?
@@ -83,23 +88,21 @@ The difference between segmentation and classification is clear at some extend. 
 ## - What is the difference between supervised and unsupervised learning in terms of dataset?
 **In a supervised learning** model, the algorithm learns on a labeled **dataset**, providing an answer key that the algorithm can use to evaluate its accuracy on training data. An **unsupervised** model, in contrast, provides unlabeled data that the algorithm tries to make sense of by extracting features and patterns on its own.
 
+
 (Denetimli bir öğrenme modelinde, algoritma etiketli bir veri kümesi üzerinde öğrenir ve algoritmanın eğitim verileri üzerindeki doğruluğunu değerlendirmek için kullanabileceği bir cevap anahtarı sağlar. Denetimsiz bir model, aksine, algoritmanın kendi başına özellikleri ve kalıpları çıkararak anlamlandırmaya çalıştığı etiketlenmemiş verileri sağlar.)
 
 # Data Preprocessing
 ## Extracting Masks
 ### -   What is color space ?
 A **color space** is a coordinate system in which each color is represented as a single point. Colors are composed of a mixture of blue, green and red colors because they react differently at different wavelengths.
-
 (**Renk uzayı**, her rengin tek bir nokta olarak temsil edildiği bir koordinat sistemidir. Renkler, farklı dalga boylarında farklı tepkime verdikleri için mavi, yeşil ve kırmızı renklerin karışımından oluşur.)
 ![enter image description here](https://www.hisour.com/wp-content/uploads/2018/03/RGB-color-space.jpg)
 ### -   What RGB stands for ?
 **RGB** means Red Green Blue, ie the primary colors in additive color synthesis. A **RGB** file consists in composite layers of Red, Gree and Blue, each being coded on 256 levels from 0 to 255.
-
 (**RGB**, Kırmızı Yeşil Mavi anlamına gelir, yani katkılı renk sentezindeki ana renkler. Bir **RGB** dosyası, her biri 0 ila 255 arasında 256 düzeyde kodlanmış Kırmızı, Yeşil ve Mavi bileşik katmanlarından oluşur.)
 
 ### -   In Python, can we transform from one color space to another?
 There are more than 150 color-space conversion methods available in OpenCV. A popular computer vision library written in C/C++ with bindings for Python, OpenCV provides easy ways of manipulating color spaces.
-
 
 (OpenCV'de 150'den fazla renk alanı dönüştürme yöntemi mevcuttur.
 C/C++ ile Python için binding'lerle yazılmış popüler bir bilgisayarlı vision kütüphanesi olan OpenCV, renk uzaylarını değiştirmenin kolay yollarını sağlar.)
@@ -107,28 +110,67 @@ C/C++ ile Python için binding'lerle yazılmış popüler bir bilgisayarlı visi
 ### -   What is the popular library for image processing?
 OpenCV is one of the most famous and widely used open-source **libraries** for computer vision tasks such as **image processing**, object detection, face detection, **image** segmentation, face recognition, and many more. Other than this, it can also be used for machine learning tasks.
 
+
 (OpenCV, görüntü işleme, nesne algılama, yüz algılama, görüntü bölütleme, yüz tanıma ve daha pek çok bilgisayarla görme görevleri için en ünlü ve yaygın olarak kullanılan açık kaynak kütüphanelerinden biridir. Bunun dışında makine öğrenimi görevleri için de kullanılabilir.)
 
 #  Converting into Tensor
 ## -  What is Computational Graph.
 A computational graph is a directed graph where the nodes correspond to **operations** or **variables**. Variables can feed their value into operations, and operations can feed their output into other operations. This way, every node in the graph defines a function of the variables.
 
+
 (Bir hesaplama grafiği, düğümlerin işlemlere veya değişkenlere karşılık geldiği yönlendirilmiş bir grafiktir. Değişkenler değerlerini işlemlere besleyebilir ve işlemler çıktılarını diğer işlemlere besleyebilir. Bu şekilde, grafikteki her düğüm değişkenlerin bir fonksiyonunu tanımlar.)
 ![enter image description here](http://media5.datahacker.rs/2021/01/54-1.jpg)
 ## -   What is Tensor?
 The values that are fed into the nodes and come out of the nodes are called **tensors**, which is just a fancy word for a multi-dimensional array. Hence, it subsumes scalars, vectors and matrices as well as tensors of a higher rank.
 
+
 (Düğümlere beslenen ve düğümlerden çıkan değerlere **tensörler** denir, bu sadece çok boyutlu bir dizi için süslü bir kelimedir.)
 ![enter image description here](https://www.kdnuggets.com/wp-content/uploads/scalar-vector-matrix-tensor.jpg)
 ## -   What is one hot encoding?
 One-Hot Encoding is essentially the representation of categorical variables as binary vectors. These categorical values are first mapped to integer values. Each integer value is then represented as a binary vector with all 0s (except for the index of the integer marked as 1).
+
+
+
 (One-Hot Encoding, temel olarak kategorik değişkenlerin ikili vektörler olarak temsilidir. Bu kategorik değerler ilk önce tamsayı değerlere eşlenir. Her tamsayı değeri daha sonra tüm 0'ları olan bir ikili vektör olarak temsil edilir (1 olarak işaretlenen tamsayı indeksi hariç))
 ![enter image description here](https://mertmekatronik.com/uploads/images/2020/10/image_750x_5f8c85c715869.jpg)
 ## What is CUDA programming?
 CUDA is a parallel computing platform and programming model developed by Nvidia for general computing on its own GPUs (graphics processing units). CUDA enables developers to speed up compute-intensive applications by harnessing the power of GPUs for the parallelizable part of the computation.
 
+
 (CUDA , Nvidia tarafından kendi GPU'larında (grafik işlem birimleri) genel hesaplama için geliştirilmiş bir paralel hesaplama platformu ve programlama modelidir. CUDA, geliştiricilerin hesaplamanın paralelleştirilebilir kısmı için GPU'ların gücünden yararlanarak yoğun hesaplama gerektiren uygulamaları hızlandırmalarını sağlar.)
 
 # Design Segmentation Model
 ## -   What is the difference between CNN and Fully CNN (FCNN) ?
-FCNN(Fully Convolutional Neural Network), unlike the classic CNN, which use the Fully Connected layers after the Convolutional layers in the network, the FCNN can take input of arbitrary size. U-Net is also a network structure based on FCN.
+FCNN(Fully Convolutional Neural Network), unlike the classic CNN, which use the Fully Connected layers after the Convolutional layers in the network, the FCNN can take input of arbitrary size. U-Net is also a network structure based on FCN. Fully convolutional training takes the whole M x M image and produces outputs for all subimages in a single ConvNet forward pass.
+
+## -   What are the different layers on CNN ?
+There are three types of layers that make up the CNN which are the convolutional layers, pooling layers, and fully-connected (FC) layers.
+
+### **1. Convolutional Layer**
+This layer is the first layer that is used to extract the various features from the input images. In this layer, the mathematical operation of convolution is performed between the input image and a filter of a particular size MxM.
+
+
+(Bu katman, girdi görüntülerinden çeşitli özellikleri çıkarmak için kullanılan ilk katmandır. Bu katmanda, girdi görüntüsü ile belirli bir MxM boyutundaki bir filtre arasında matematiksel evrişim işlemi gerçekleştirilir.)
+
+### **2. Pooling Layer**
+In most cases, a Convolutional Layer is followed by a Pooling Layer. The primary aim of this layer is to decrease the size of the convolved feature map to reduce the computational costs. This is performed by decreasing the connections between layers and independently operates on each feature map. Depending upon method used, there are several types of Pooling operations.
+
+
+(Çoğu durumda, bir Convolution Katmanı, bir Pooling Katmanı izler. Bu katmanın birincil amacı, hesaplama maliyetlerini azaltmak için convolved feature map'in boyutunu küçültmektir. Bu, katmanlar arasındaki bağlantıları azaltarak gerçekleştirilir ve her bir feature map üzerinde bağımsız olarak çalışır. Kullanılan yönteme bağlı olarak, birkaç tür Pooling işlemi vardır.
+
+### **3. Fully Connected Layer**
+The Fully Connected (FC) layer consists of the weights and biases along with the neurons and is used to connect the neurons between two different layers. These layers are usually placed before the output layer and form the last few layers of a CNN Architecture.
+
+(Fully Connected (FC) katmanı, nöronlarla birlikte ağırlıklardan ve biase'lardan oluşur ve nöronları iki farklı katman arasında bağlamak için kullanılır. Bu katmanlar genellikle çıktı katmanından önce yerleştirilir ve bir CNN Mimarisinin son birkaç katmanını oluşturur.) 
+
+![enter image description here](https://miro.medium.com/max/3288/1*uAeANQIOQPqWZnnuH-VEyw.jpeg)
+
+## -What is activation function ?
+An activation function is a function used in artificial neural networks which outputs a small value for small inputs, and a larger value if its inputs exceed a threshold. If the inputs are large enough, the activation function "fires", otherwise it does nothing. In other words, an activation function is like a gate that checks that an incoming value is greater than a critical number.
+Many multi-layer neural networks end in a penultimate layer which outputs real-valued scores that are not conveniently scaled and which may be difficult to work with. Here the softmax is very useful because it converts the scores to a normalized probability distribution, which can be displayed to a user or used as input to other systems. For this reason it is usual to append a softmax function as the final layer of the neural network.
+
+
+(Birçok çok katmanlı sinir ağı, uygun şekilde ölçeklendirilmemiş ve birlikte çalışması zor olabilecek gerçek değerli puanlar veren sondan bir önceki katmanda sona erer. Burada softmax çok kullanışlıdır çünkü puanları bir kullanıcıya gösterilebilen veya diğer sistemlere girdi olarak kullanılabilen normalleştirilmiş bir olasılık dağılımına dönüştürür . Bu nedenle, sinir ağının son katmanı olarak bir softmax işlevi eklemek olağandır.)
+
+
+![enter image description here](https://themaverickmeerkat.com/img/softmax/sigmoid_plot.jpg)
