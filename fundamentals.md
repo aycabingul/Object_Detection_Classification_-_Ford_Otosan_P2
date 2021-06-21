@@ -142,8 +142,6 @@ CUDA is a parallel computing platform and programming model developed by Nvidia 
 # Design Segmentation Model
 ## -   What is the difference between CNN and Fully CNN (FCNN) ?
 FCNN(Fully Convolutional Neural Network), unlike the classic CNN, which use the Fully Connected layers after the Convolutional layers in the network, the FCNN can take input of arbitrary size. U-Net is also a network structure based on FCN. Fully convolutional training takes the whole M x M image and produces outputs for all subimages in a single ConvNet forward pass.
-There was a need for a network which didn’t have any restrictions on input image size and could perform image classification task at hand. The first thing that struck me was fully convolutional networks (FCNs). FCN is a network that does not contain any “Dense” layers (as in traditional CNNs) instead it contains 1x1 convolutions that perform the task of fully connected layers (Dense layers).
-So if we don't want to be limited to a fixed size in the input image, we can use FCNN.
 
 ## -   What are the different layers on CNN ?
 There are three types of layers that make up the CNN which are the convolutional layers, pooling layers, and fully-connected (FC) layers.
@@ -225,3 +223,15 @@ In **Stochastic Gradient Descent** (SGD), we consider just one example at a time
 
 SGD can be used for larger datasets. It converges faster when the dataset is large as it causes updates to the parameters more frequently.
 (SGD, daha büyük veri kümeleri için kullanılabilir. Parametrelerin daha sık güncellenmesine neden olduğu için veri kümesi büyük olduğunda daha hızlı yakınsar.)
+
+
+## -   What is Backpropogation ? What is used for ?
+Artificial neural networks use backpropagation as a learning algorithm to compute a gradient descent with respect to weights. Desired outputs are compared to achieved system outputs, and then the systems are tuned by adjusting connection weights to narrow the difference between the two as much as possible. The algorithm gets its name because the weights are updated backwards, from output towards input.
+A neural network propagates the signal of the input data forward through its parameters towards the moment of decision, and then _backpropagates_ information about the error, in reverse through the network, so that it can alter the parameters. This happens step by step:
+-   The network makes a guess about data, using its parameters
+-   The network’s is measured with a loss function
+-   The error is backpropagated to adjust the wrong-headed parameters
+
+Backpropagation takes the error associated with a wrong guess by a neural network, and uses that error to adjust the neural network’s parameters in the direction of less error.
+
+![enter image description here](https://machinelearningknowledge.ai/wp-content/uploads/2019/10/Backpropagation.gif)
