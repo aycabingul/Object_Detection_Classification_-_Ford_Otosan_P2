@@ -205,7 +205,7 @@ if you have 1000 training examples, and your batch size is 500, then it will tak
  ## -   What Is the Cost Function?
  A cost function is a measure of "how good" a neural network did with respect to it's given training sample and the expected output. It also may depend on variables such as weights and biases. A cost function is a single value, not a vector, because it rates how good the neural network did as a whole.
 
- (Maliyet fonksiyonu, verilen eğitim örneğine ve beklenen çıktıya göre bir sinir ağının "ne kadar iyi" olduğunun bir ölçüsüdür. Ayrıca ağırlıklar ve önyargılar gibi değişkenlere de bağlı olabilir. Maliyet fonksiyonu, bir vektör değil, tek bir değerdir, çünkü sinir ağının bir bütün olarak ne kadar iyi olduğunu değerlendirir.)
+ (Maliyet fonksiyonu, verilen eğitim örneğine ve beklenen çıktıya göre bir sinir ağının "ne kadar iyi" olduğunun bir ölçüsüdür. Ayrıca ağırlıklar ve bias'lar gibi değişkenlere de bağlı olabilir. Maliyet fonksiyonu, bir vektör değil, tek bir değerdir, çünkü sinir ağının bir bütün olarak ne kadar iyi olduğunu değerlendirir.)
 
 ## -What is/are the purpose(s) of an optimizer in NN?
 Optimizers are algorithms or methods used to change the attributes of the neural network such as weights and learning rate to reduce the losses. How you should change your weights or learning rates of your neural network to reduce the losses is defined by the optimizers you use. Optimization algorithms are responsible for reducing the losses and to provide the most accurate results possible.
