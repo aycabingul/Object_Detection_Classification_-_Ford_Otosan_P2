@@ -243,6 +243,7 @@ Logistic Activation Function
 ## What is parameter and hyper-parameter in NN ?
 
 A model parameter is a configuration variable internal to the model and whose value can be estimated from data. Parameters are key to machine learning algorithms. They are the part of the model that is learned from historical training data. These are the coefficients of the model, and the model itself chooses them. It means that the algorithm, while learning, optimizes these coefficients (according to a given optimization strategy) and returns an array of parameters that minimize the error. 
+
 **Hyperparameters**: these are elements that, differently from the previous ones, you need to set. Furthermore, the model will not update them according to the optimization strategy: your manual intervention will always be needed.
 
 - Number of hidden layers
