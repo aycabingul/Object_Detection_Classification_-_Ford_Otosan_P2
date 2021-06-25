@@ -1,5 +1,3 @@
-# Answers
-
 # Project
 
 ## What is Machine Learning?
