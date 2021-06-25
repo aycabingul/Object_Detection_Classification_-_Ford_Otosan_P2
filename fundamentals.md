@@ -124,7 +124,7 @@ The difference between segmentation and classification is clear at some extend. 
 
 Supervised → input and label
 
-Label unsupervised →input
+Unsupervised →input
 
 (Denetimli bir öğrenme modelinde, algoritma etiketli bir veri kümesi üzerinde öğrenir ve algoritmanın eğitim verileri üzerindeki doğruluğunu değerlendirmek için kullanabileceği bir cevap anahtarı sağlar. Denetimsiz bir model, aksine, algoritmanın kendi başına özellikleri ve kalıpları çıkararak anlamlandırmaya çalıştığı etiketlenmemiş verileri sağlar.)
 
