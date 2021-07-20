@@ -1,4 +1,6 @@
-﻿#  Contents
+﻿# Object Recognition<a name="anabaslik2"></a>
+
+#  Contents
 -  [ **Object Recognition**](#anabaslik2)
     -  [What is an image classification task?](#paragraph39)
     -   [What is an object localization task?](#paragraph40)
@@ -7,7 +9,7 @@
     -   [What is bounding box regression?](#paragraph43)
     -   [What is non-max suppression?](#paragraph44)
 
-## Object Recognition<a name="anabaslik2"></a>
+
 ### What is an image classification task?<a name="paragraph39"></a>
 It involves the extraction of information from an image and then associating the extracted information to one or more class labels. Image classification within the machine learning domain can be approached as a supervised learning task.
 

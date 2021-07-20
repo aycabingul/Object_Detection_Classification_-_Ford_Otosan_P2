@@ -1,5 +1,5 @@
-﻿# Fundamentals
-
+﻿
+# Semantic Segmentation<a name="anabaslik1"></a>
 
 ##  Contents
 -  [ **Semantic Segmentation**](#anabaslik1)
@@ -55,7 +55,7 @@
          
            
 
-# Semantic Segmentation<a name="anabaslik1"></a>
+
 
 ## What is Machine Learning?<a name="paragraph1"></a>
 
