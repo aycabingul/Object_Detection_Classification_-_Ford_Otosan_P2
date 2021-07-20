@@ -3,7 +3,7 @@
 
 ##  Contents
 -  [ **Semantic Segmentation**](#anabaslik1)
-    -  [ What is Machine Learning?](#paragraf1)
+    -  [ What is Machine Learning?](#paragraph1)
     -  [What is Unsupervised vs Supervised learning difference? ](#paragraph2)
         - [Supervised learning](#subparagraph1)
          -  [Unsupervised learning](#subparagraph2)
