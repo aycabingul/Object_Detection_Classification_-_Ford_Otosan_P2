@@ -51,8 +51,7 @@
     -  [What is an object detection task?](#paragraph41)
     -  [What is an object recognition task?](#paragraph42)
     -   [What is bounding box regression?](#paragraph43)
-    -  [What is bounding box regression?](#paragraph44)
-    -   [What is non-max suppression?](#paragraph45)
+    -   [What is non-max suppression?](#paragraph44)
    
          
               
@@ -447,9 +446,8 @@ Object Recognition is responding to the question "What is the object in the imag
 -   _output_: position(s) and label(s) (names) of the objects in the image.
 
 <p  align="center">
-<img  src="images/Object_Recognition"  width="">
+<img  src="images/Object_Recognition.png"  width="">
 </p>
-
 
 
 ### What is bounding box regression?<a name="paragraph43"></a>
