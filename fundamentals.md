@@ -446,7 +446,12 @@ Object Recognition is responding to the question "What is the object in the imag
     
 -   _output_: position(s) and label(s) (names) of the objects in the image.
 
-<p  align="center"><img  src="images/Object_Recognition"  width=""> </p>
+<p  align="center">
+<img  src="images/Object_Recognition"  width="">
+</p>
+
+
+
 ### What is bounding box regression?<a name="paragraph43"></a>
 Bounding-box regression is a popular technique to refine or predict localization boxes in recent object detection approaches. Typically, bounding-box regressors are trained to regress from either region proposals or fixed anchor boxes to nearby bounding boxes of predefined target object classes.
 
