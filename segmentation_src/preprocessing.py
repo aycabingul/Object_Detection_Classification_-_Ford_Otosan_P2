@@ -9,27 +9,11 @@ import glob
 from constant import *
 
 
-batch_images=[] 
-image_path=[] 
-for name in os.listdir(IMG_DIR):
-    image_path.append(os.path.join(IMG_DIR,name))
-#Save the names of the files in the folder in IMAGE_DIR path to the list
-
-mask_polygon_path=[] 
-for name in os.listdir(MASK_POLYGON_DIR):
-    mask_polygon_path.append(os.path.join(MASK_POLYGON_DIR,name))
-#Save the names of the files in the folder in MASK_DIR path to the list
-
-mask_line_path=[] 
-for name in os.listdir(MASK_LINE_DIR):
-    mask_line_path.append(os.path.join(MASK_LINE_DIR,name))
-#Save the names of the files in the folder in MASK_DIR path to the list
-output_shape=[224,224]
-batch_masks=[]
 
 
 def tensorize_image(image_path,output_shape,cuda=False): #Create a 2-parameter function
     batch_images=[] 
+    global image
     for image in image_path[:8]: #Access the elements in the image_path list one by one with the for loop
         img=cv2.imread(image) #Read file in path assigned to image variable
         norm_img = np.zeros((1920,1208))
@@ -50,13 +34,17 @@ def tensorize_image(image_path,output_shape,cuda=False): #Create a 2-parameter f
 
 
 def tensorize_mask(mask_path,output_shape,n_classes,cuda=False):#Create a 2-parameter function
+   
     batch_masks=[]
+    global mask
     for mask in mask_path:#Access the elements in the image_path list one by one with the for loop
         mask=cv2.imread(mask,0)
         #a change here; Read as (HXW) (black, white)
         #mask = cv2.cvtColor(mask, cv2.COLOR_BGR2GRAY)    
+        
         mask= cv2.resize(mask, tuple(output_shape),interpolation = cv2.INTER_NEAREST)#Apply image resize operation
         #one hot encode 
+        
         mask=one_hot_encoder(mask,n_classes)
         torchlike_mask = torchlike_data(mask)
         batch_masks.append(torchlike_mask)
@@ -70,12 +58,14 @@ def tensorize_mask(mask_path,output_shape,n_classes,cuda=False):#Create a 2-para
 
 
 def one_hot_encoder(res_mask,n_classes):
+    global a
     #one hot encode
     #Create an np.array of zeros.
     one_hot=np.zeros((res_mask.shape[0],res_mask.shape[1],n_classes),dtype=np.int)
     #Find unique values in res_mask [0,1]
     #increase in i by the length of the list
     #[0,1] when returning the inside of list, each list element is given to unique_value variable
+    a=np.unique(res_mask)
     for i,unique_value in enumerate(np.unique(res_mask)):
         one_hot[:,:,i][res_mask==unique_value]=1
     return one_hot

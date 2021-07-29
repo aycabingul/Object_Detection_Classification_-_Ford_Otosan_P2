@@ -33,9 +33,9 @@ for json_name in tqdm.tqdm(jsons):#access the elements in the json list
     for obj in json_dict["objects"]:# To access each list inside the json_objs list
                          
         if obj['classTitle']=='Solid Line':
-           cv2.polylines(mask,np.array([obj['points']['exterior']],dtype=np.int32),False,color=2,thickness=16)
+           cv2.polylines(mask,np.array([obj['points']['exterior']],dtype=np.int32),False,color=1,thickness=16)
  
         elif obj['classTitle']=='Dashed Line':       
-               cv2.polylines(mask,np.array([obj['points']['exterior']],dtype=np.int32),False,color=3,thickness=16)
+               cv2.polylines(mask,np.array([obj['points']['exterior']],dtype=np.int32),False,color=2,thickness=16)
     
     cv2.imwrite(mask_path,mask.astype(np.uint8))#Print filled masks in mask_path with imwrite
