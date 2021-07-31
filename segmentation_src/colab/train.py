@@ -15,7 +15,6 @@ import matplotlib.ticker as mticker
 
 def train(valid_size,test_size,batch_size,epochs,cuda,input_shape,n_classes,mask_dir,model,model_save,train_if):
     global test_input_path_list
-    global train_input_path_list
     ######### DIRECTORIES #########
     SRC_DIR = os.getcwd()
     
@@ -188,7 +187,7 @@ def train(valid_size,test_size,batch_size,epochs,cuda,input_shape,n_classes,mask
 # n_classes = 4
 # MASK_DIR=MASK_POLYGON_DIR
 # model=POL_NET(input_shape,n_classes)
-# model_save='/mnt/sdb2/Intern_2/models/best_polygon_model.pt'
+# model_save='models/best_polygon_model.pt'
 #train_if=True
 # ############################### 
 # #polygon_model
@@ -207,9 +206,9 @@ input_shape = (224, 224)
 n_classes = 3
 MASK_DIR=MASK_LINE_DIR
 model=SegNet(n_classes)
-model_save='/mnt/sdb2/Intern_2/models/best_line_model.pt'
-train_if=True
-############################## 
+model_save='models/best_polygon_model.pt'
+train_if=False
+############################### 
 #polygon_model
 train(valid_size,test_size,batch_size,epochs,cuda,input_shape,n_classes,MASK_DIR,model,model_save,train_if)
 
