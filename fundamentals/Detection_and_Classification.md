@@ -1,8 +1,5 @@
 ﻿# Detection and Classification
 
-
-﻿## Object Recognition<a name="anabaslik2"></a>
-
 #  Contents
 -  [ **Object Recognition**](#anabaslik2)
     -  [What is an image classification task?](#paragraph39)
@@ -12,7 +9,7 @@
     -   [What is bounding box regression?](#paragraph43)
     -   [What is non-max suppression?](#paragraph44)
 
-
+# ﻿Object Recognition<a name="anabaslik2"></a>
 ### What is an image classification task?<a name="paragraph39"></a>
 It involves the extraction of information from an image and then associating the extracted information to one or more class labels. Image classification within the machine learning domain can be approached as a supervised learning task.
 
@@ -91,4 +88,3 @@ Most object detection algorithms use NMS to whittle down a large number of detec
 (Çoğu nesne algılama algoritması, çok sayıda algılanan dikdörtgeni birkaç taneye indirgemek için NMS kullanır. En temel düzeyde, çoğu nesne dedektörü bir tür pencereleme yapar. Çeşitli boyut ve şekillerde çok sayıda, binlerce pencere ya doğrudan görüntü üzerinde ya da görüntünün bir özelliği üzerinde oluşturulur. Bu pencerelerin yalnızca bir nesne içerdiği varsayılır ve her sınıf için bir olasılık/puan elde etmek için bir sınıflandırıcı kullanılır. Dedektör çok sayıda sınırlayıcı kutu çıkardığında, en iyilerini seçmek gerekir. NMS, bu görev için en yaygın kullanılan algoritmadır. Özünde, kümeleme algoritmasının bir şeklidir.)
 
 ![enter image description here](https://appsilon.com/assets/uploads/2018/08/nonmax-1.png)
-
