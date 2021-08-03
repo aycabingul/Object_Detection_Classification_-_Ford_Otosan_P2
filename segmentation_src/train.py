@@ -199,16 +199,16 @@ def train(valid_size,test_size,batch_size,epochs,cuda,input_shape,n_classes,mask
 #########LINE###############
 ######### PARAMETERS ##########
 valid_size = 0.3
-test_size  = 0.1
+test_size  = 0.05
 batch_size = 4
-epochs = 30
+epochs = 20
 cuda = True
 input_shape = (224, 224)
 n_classes = 3
 MASK_DIR=MASK_LINE_DIR
 model=SegNet(n_classes)
 model_save='/mnt/sdb2/Intern_2/models/best_line_model.pt'
-train_if=True
+train_if=False
 ############################## 
 #polygon_model
 train(valid_size,test_size,batch_size,epochs,cuda,input_shape,n_classes,MASK_DIR,model,model_save,train_if)

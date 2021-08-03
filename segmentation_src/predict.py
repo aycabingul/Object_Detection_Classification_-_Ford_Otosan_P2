@@ -42,14 +42,14 @@ def predict(test_input_path_list,model_path,model_type):
         
         if model_type=='line':
            img[mask==1,:]=(0, 0, 255)
-           img[mask==2,:]=(38, 255, 255)
+           img[mask==2,:]=(0, 0, 255)#(38, 255, 255)
         elif model_type=='polygon':
             img[mask==1,:] = (255, 0, 125)
             img[mask==2,:]=(0,140,255)
             img[mask==3,:]=(0,0,255)
         opac_image=(img/2+cpy_img/2).astype(np.uint8)
         predict_name=batch_test[0]
-        predict_path=predict_name.replace('img_deneme', 'predict')
+        predict_path=predict_name.replace('img', 'predict')
         cv2.imwrite(predict_path,opac_image.astype(np.uint8))
 
 

@@ -22,3 +22,6 @@ JSON_DIR = '/mnt/sdb2/Intern_2/intern_Data/ann'#The path to the file is assigned
 result='/mnt/sdb2/Intern_2/intern_Data/result'
 if not os.path.exists(result):
     os.mkdir(result)
+predict='/mnt/sdb2/Intern_2/intern_Data/predict'
+if not os.path.exists(predict):
+    os.mkdir(predict)
