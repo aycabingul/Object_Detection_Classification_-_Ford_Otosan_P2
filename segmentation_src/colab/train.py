@@ -176,39 +176,39 @@ def train(valid_size,test_size,batch_size,epochs,cuda,input_shape,n_classes,mask
         
         draw_graph(val_losses,train_losses,epochs)
     
-# #########POLYGON###############
-# ######### PARAMETERS ##########
-# valid_size = 0.3
-# test_size  = 0.1
-# batch_size = 4
-# epochs = 20
-# cuda = True
-# input_shape = (224, 224)
-# n_classes = 4
-# MASK_DIR=MASK_POLYGON_DIR
-# model=POL_NET(input_shape,n_classes)
-# model_save='models/best_polygon_model.pt'
-#train_if=True
-# ############################### 
-# #polygon_model
-# train(valid_size,test_size,batch_size,epochs,cuda,input_shape,n_classes,MASK_DIR,model,model_save)
+#########POLYGON###############
+######### PARAMETERS ##########
+valid_size = 0.3
+test_size  = 0.1
+batch_size = 4
+epochs = 20
+cuda = True
+input_shape = (224, 224)
+n_classes = 4
+MASK_DIR=MASK_POLYGON_DIR
+model=POL_NET(input_shape,n_classes)
+model_save='models/best_polygon_model.pt'
+train_if=True
+############################### 
+#polygon_model
+train(valid_size,test_size,batch_size,epochs,cuda,input_shape,n_classes,MASK_DIR,model,model_save)
 
 
 
 #########LINE###############
 ######### PARAMETERS ##########
-valid_size = 0.3
-test_size  = 0.1
-batch_size = 4
-epochs = 30
-cuda = True
-input_shape = (224, 224)
-n_classes = 3
-MASK_DIR=MASK_LINE_DIR
-model=SegNet(n_classes)
-model_save='models/best_polygon_model.pt'
-train_if=False
+#valid_size = 0.3
+#test_size  = 0.1
+#batch_size = 4
+#epochs = 30
+#cuda = True
+#input_shape = (224, 224)
+#n_classes = 3
+#MASK_DIR=MASK_LINE_DIR
+#model=SegNet(n_classes)
+#model_save='models/best_polygon_model.pt'
+#train_if=False
 ############################### 
 #polygon_model
-train(valid_size,test_size,batch_size,epochs,cuda,input_shape,n_classes,MASK_DIR,model,model_save,train_if)
+#train(valid_size,test_size,batch_size,epochs,cuda,input_shape,n_classes,MASK_DIR,model,model_save,train_if)
 
