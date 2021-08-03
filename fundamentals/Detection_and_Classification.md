@@ -1,7 +1,7 @@
 ﻿# Detection and Classification
 
 
-﻿# Object Recognition<a name="anabaslik2"></a>
+﻿#Object Recognition<a name="anabaslik2"></a>
 
 #  Contents
 -  [ **Object Recognition**](#anabaslik2)
