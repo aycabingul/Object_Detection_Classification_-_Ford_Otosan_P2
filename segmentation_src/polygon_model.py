@@ -51,7 +51,8 @@ class POL_NET(nn.Module):#A class named FoInternNet was created
         self.maxpool = nn.MaxPool2d(2)#It takes the maximum of the values in the pixels the filter travels.
         #kernel_size = determines the area to be "pool" on and determines step by step.
         self.upsample = nn.Upsample(scale_factor=2,mode='bilinear', align_corners=True)
-        #When we want to increase the image dimensions, we basically expand an image and fill in the "gaps" in the original image's rows and columns.
+        #When we want to increase the image dimensions, we basically expand an image 
+        #and fill in the "gaps" in the original image's rows and columns.
         #scale_factor: scale factor to sample up or down. A tuple corresponds to scale along x and y.
         #Bilinear: Uses all nearby pixels to calculate the value of the pixel using linear interpolations.
         #align_corners = True, pixels points are considered as a guide. The points in the corners are aligned.
@@ -68,78 +69,38 @@ class POL_NET(nn.Module):#A class named FoInternNet was created
         #print(conv1.shape)
         x = self.maxpool(conv1)
         
-        #x=self.dropout(x)
-        
-        #print("maxpool")
-        #print(x.shape)
-        
-        
         conv2 = self.dconv_down2(x)
     
-        #print(conv2.shape)
         x = self.maxpool(conv2)
-        #x=self.dropout(x)
-        #print("maxpool")
-        #print(x.shape)
-        
+
         conv3 = self.dconv_down3(x)
         
-        #print(conv3.shape)
         x = self.maxpool(conv3)   
-        #x=self.dropout(x)
-        #print("maxpool")
-        #print(x.shape)
-        
+
         x = self.dconv_down4(x)
-        #print(x.shape)
         
         x = self.upsample(x)    
-        #print("upsample")
-        #print(x.shape)
-        x = torch.cat([x, conv3], dim=1)#Combines the given tensor array at the given size 
+
+        x = torch.cat([x, conv3], dim=1)
+        #Combines the given tensor array at the given size 
         #dim: the size in which the tensors are combined
      
-    
-        #print("cat")
-        #print(x.shape)
         x = self.dconv_up3(x)
 
-        #print(x.shape)
-
         x = self.upsample(x)    
-        #print("upsample")
-        #print(x.shape)
 
-        x = torch.cat([x, conv2], dim=1)    
-        #print("cat")
-        #print(x.shape)
-
+        x = torch.cat([x, conv2], dim=1)
 
         x = self.dconv_up2(x)
-
-        #print(x.shape)
-        
-
+     
         x = self.upsample(x)    
-        #print("upsample")
-        #print(x.shape)
 
         x = torch.cat([x, conv1], dim=1)   
-        #print("cat")
-        #print(x.shape)
-
         
         x = self.dconv_up1(x)
-
-        #print(x.shape)
-
         
         x = self.conv_last(x)
-        #print(x.shape)
-
         
         x = nn.Softmax(dim=1)(x)
-        
-        #print(x.shape)
 
         return x

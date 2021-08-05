@@ -42,23 +42,21 @@ def predict(test_input_path_list,model_path,model_type):
         mask_ind   = mask == 1
         cpy_img  = img.copy()
         
-        if model_type=='line':
+        if model_type=='predict_line':
            img[mask==1,:]=(0, 0, 255)
            img[mask==2,:]=(38, 255, 255)
-        elif model_type=='polygon':
+        elif model_type=='predict_polygon':
             img[mask==1,:] = (255, 0, 125)
-            img[mask==2,:]=(0,140,255)
-            img[mask==3,:]=(0,0,255)
         opac_image=(img/2+cpy_img/2).astype(np.uint8)
         predict_name=batch_test[0]
-        predict_path=predict_name.replace('img', 'predict')
+        predict_path=predict_name.replace('img', model_type)
         cv2.imwrite(predict_path,opac_image.astype(np.uint8))
 
 
 #LINE Predict#
-model_path='/mnt/sdb2/Intern_2/models/best_line_model.pt'
-model_type='line'
-predict(test_input_path_list,model_path,model_type)
+model_path='/mnt/sdb2/Intern_2/models/best_polygon_model.pt'
+model_type='predict'
+predict(test_input_path_list,model_path,'predict')
 
 # #Polygon Predict#
 # test_input_path_list=['/mnt/sdb2/Intern_2/intern_Data/img_deneme/cfc_000252.jpg']

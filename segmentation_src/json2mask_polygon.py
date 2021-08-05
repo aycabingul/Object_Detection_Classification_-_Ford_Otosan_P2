@@ -1,6 +1,5 @@
 """
 Created on Sat Jun 26 00:44:19 2021
-
 @author: aycaburcu
 """
 import os
@@ -37,9 +36,6 @@ for json_name in tqdm.tqdm(jsons):#access the elements in the json list
                          #Converting to int32 because there are floats between points
                          cv2.fillPoly(mask,np.array([interior],dtype=np.int32),color=0)
                          
-        elif obj['classTitle']=='Traffic Cone':
-            cv2.fillPoly(mask,np.array([obj['points']['exterior']],dtype=np.int32),color=2)
-        elif obj['classTitle']=='Traffic Barrier':
-            cv2.fillPoly(mask,np.array([obj['points']['exterior']],dtype=np.int32),color=3)
+
     
     cv2.imwrite(mask_path,mask.astype(np.uint8))#Print filled masks in mask_path with imwrite
