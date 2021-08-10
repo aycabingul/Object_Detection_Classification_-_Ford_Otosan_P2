@@ -47,47 +47,43 @@ def json2od(JSON_DIR,json_name):
 
 
 """ Write down into the txt file """
-
-def txt_write(jsons,valid_size,test_size,train_label,test_label,valid_label):
-    lines= []
-    for json_name in tqdm.tqdm(jsons):
-        
-        image_name = os.path.splitext(json_name)[0]
-        # Change from png to jpg
-        image_name=image_name[:-3]+'jpg'
-        image_path = os.path.join(IMG_DIR, image_name)
-    
-        if len(json2od(JSON_DIR,json_name))!=0:
-            line = image_path+' '+json2od(JSON_DIR,json_name)+'\n'
-            lines.append(line)
-    
-    total_size=len(lines)
-    test_ind  = int(total_size * test_size)#Multiply indices length by test_size and assign it to an int-shaped variable
-    valid_ind = int(test_ind + total_size * valid_size)
-    train_txt=open(train_label, "w+")
-    test_txt=open(test_label, "w+")
-    valid_txt=open(valid_label, "w+")
-    
-    for ln in lines[:test_ind] :
-        # Write down
-        test_txt.write(ln)
-            
-    for ln in lines[test_ind:valid_ind]:
-        valid_txt.write(ln)
-          
-    for ln in lines[valid_ind:]:
-        train_txt.write(ln)
-      
- 
-        
-
+train_txt=open(OD_TRA_LABEL, "w+")
+test_txt=open(OD_TES_LABEL, "w+")
+valid_txt=open(OD_VAL_LABEL, "w+")
 jsons=os.listdir(JSON_DIR)#List created with names of json files in ann folde
+param=0
 valid_size = 0.3#Validation dataset is used to evaluate a particular model, but this is for frequent evaluation.
 test_size  = 0.05#rate of data to be tested
-train_label=OD_TRA_LABEL
-test_label=OD_TES_LABEL
-valid_label=OD_VAL_LABEL
-txt_write(jsons,valid_size,test_size,train_label,test_label,valid_label)       
+test_ind  = int(3671 * test_size)#Multiply indices length by test_size and assign it to an int-shaped variable
+valid_ind = int(test_ind + 3671 * valid_size)
+line_list=[]
+for json_name in tqdm.tqdm(jsons):
+    
+    image_name = os.path.splitext(json_name)[0]
+    # Change from png to jpg
+    image_name=image_name[:-3]+'jpg'
+    image_path = os.path.join(IMG_DIR, image_name)
+
+    if len(json2od(JSON_DIR,json_name))!=0:
+        line = image_path+' '+json2od(JSON_DIR,json_name)+'\n'
+        line_list.append(line)
+        
+        
+        if param<test_ind:
+        # Write down
+            test_txt.write(line)
+        elif param>=test_ind and param<valid_ind:
+            valid_txt.write(line)
+        elif param>=valid_ind:
+            train_txt.write(line)
+        
+        param=param+1
+
+        
+# Close txt file
+train_txt.close()
+test_txt.close()
+valid_txt.close()
 
 
 

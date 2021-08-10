@@ -8,6 +8,7 @@ JSON_DIR = '/mnt/sdb2/Intern_2/intern_Data/ann'#The path to the file is assigned
 OD_TRA_LABEL='/mnt/sdb2/Intern_2/intern_Data/train.txt'  
 OD_TES_LABEL='/mnt/sdb2/Intern_2/intern_Data/test.txt'  
 OD_VAL_LABEL='/mnt/sdb2/Intern_2/intern_Data/valid.txt'  
+OD_LABEL='/mnt/sdb2/Intern_2/intern_Data/total.txt'  
 
 result_train_box ='/mnt/sdb2/Intern_2/intern_Data/result_train_box'
 result_valid_box ='/mnt/sdb2/Intern_2/intern_Data/result_valid_box'
