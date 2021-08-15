@@ -87,7 +87,6 @@ test_size  = 0.05#rate of data to be tested
 train_label=OD_TRA_LABEL
 test_label=OD_TES_LABEL
 valid_label=OD_VAL_LABEL
-txt_write(jsons,valid_size,test_size,train_label,test_label,valid_label)       
-
+txt_write(jsons,valid_size,test_size,train_label,test_label,valid_label)   
 
 
