@@ -8,7 +8,7 @@ JSON_DIR = '/mnt/sdb2/Intern_2/intern_Data/ann'#The path to the file is assigned
 OD_TRA_LABEL='/mnt/sdb2/Intern_2/intern_Data/train.txt'  
 OD_TES_LABEL='/mnt/sdb2/Intern_2/intern_Data/test.txt'  
 OD_VAL_LABEL='/mnt/sdb2/Intern_2/intern_Data/valid.txt'  
-OD_LABEL='/mnt/sdb2/Intern_2/intern_Data/total.txt'  
+  
 
 result_train_box ='/mnt/sdb2/Intern_2/intern_Data/result_train_box'
 result_valid_box ='/mnt/sdb2/Intern_2/intern_Data/result_valid_box'
@@ -27,3 +27,32 @@ if not os.path.exists(cropped_path_valid):
 
 if not os.path.exists(cropped_path_train): 
     os.mkdir(cropped_path_train)
+    
+    
+    
+train='/mnt/sdb2/Intern_2/intern_Data/obj'
+test='/mnt/sdb2/Intern_2/intern_Data/test_pred'
+valid='/mnt/sdb2/Intern_2/intern_Data/test'
+if not os.path.exists(train): 
+    os.mkdir(train)
+
+if not os.path.exists(test): 
+    os.mkdir(test)
+    
+if not os.path.exists(valid): 
+    os.mkdir(valid)    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

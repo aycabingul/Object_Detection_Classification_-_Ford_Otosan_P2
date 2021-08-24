@@ -54,12 +54,11 @@ def predict(test_input_path_list,model_path,model_type):
 
 
 #LINE Predict#
-model_path='/mnt/sdb2/Intern_2/models/best_polygon_model.pt'
-model_type='predict'
-predict(test_input_path_list,model_path,'predict')
+model_path='/mnt/sdb2/Intern_2/models/Unet_1.pt'
+model_type='predict_line'
+predict(test_input_path_list,model_path,model_type)
 
 # #Polygon Predict#
-# test_input_path_list=['/mnt/sdb2/Intern_2/intern_Data/img_deneme/cfc_000252.jpg']
-# model_type='polygon'
+# model_type='predict_polygon'
 # model_path='/mnt/sdb2/Intern_2/models/best_polygon_model.pt'
 # predict(test_input_path_list,model_path,model_type)

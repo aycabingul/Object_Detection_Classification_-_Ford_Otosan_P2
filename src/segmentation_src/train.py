@@ -1,5 +1,5 @@
 from line_Unet import LINE_NET
-from polygon_model import POL_NET
+from Unet_1 import FoInternNet
 from line_SegNet import SegNet
 from preprocessing import tensorize_image, tensorize_mask, image_mask_check
 import os
@@ -187,8 +187,8 @@ cuda = True
 input_shape = (224, 224)
 n_classes = 2
 MASK_DIR=MASK_POLYGON_DIR
-model=POL_NET(input_shape,n_classes)
-model_save='/mnt/sdb2/Intern_2/models/best_polygon_model.pt'
+model=FoInternNet(input_shape,n_classes)
+model_save='/mnt/sdb2/Intern_2/models/Unet_1.pt'
 train_if=False
 ############################### 
 #polygon_model
