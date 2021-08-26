@@ -23,25 +23,34 @@ if cuda:
 
 for i in tqdm.tqdm(range(len(test_input_path_list))):
     batch_test = test_input_path_list[i:i+1]
+    img=cv2.imread(batch_test[0])
+    
     test_input_line = tensorize_image(batch_test, input_shape, cuda)
     test_input_freespace=tensorize_image(batch_test, input_shape, cuda)
+    
     outs_freespace = model_freespace(test_input_freespace)
     outs_line = model_line(test_input_line)
+    
     out_freespace=torch.argmax(outs_freespace,axis=1)
     out_line=torch.argmax(outs_line,axis=1)
+    
     out_freespace_cpu = out_freespace.cpu()
     out_line_cpu=out_line.cpu()
+    
     outputs_list_freespace=out_freespace_cpu.detach().numpy()
     outputs_list_line=out_line_cpu.detach().numpy()
+    
     mask_freespace=np.squeeze(outputs_list_freespace,axis=0)
     mask_line=np.squeeze(outputs_list_line,axis=0)
+    
     mask_uint8_line = mask_line.astype('uint8')
     mask_uint8_freespace = mask_freespace.astype('uint8')
-    mask_line= cv2.resize(mask_uint8_line, (1920, 1208),interpolation=cv2.INTER_NEAREST)
-    mask_freespace= cv2.resize(mask_uint8_freespace, (1920, 1208),interpolation=cv2.cv2.INTER_CUBIC)
+    
+    mask_line= cv2.resize(mask_uint8_line, ((img.shape[1]), (img.shape[0])),interpolation=cv2.INTER_NEAREST)
+    mask_freespace= cv2.resize(mask_uint8_freespace, ((img.shape[1]), (img.shape[0])),interpolation=cv2.cv2.INTER_CUBIC)
         
-    img=cv2.imread(batch_test[0])
-    img=cv2.resize(img,(1920, 1208))
+
+
     mask_ind   = mask_line == 1
     mask_ind   = mask_freespace == 1
     cpy_img  = img.copy()

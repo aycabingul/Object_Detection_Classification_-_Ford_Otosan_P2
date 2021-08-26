@@ -26,7 +26,10 @@ def predict(test_input_path_list,model_path,model_type):
     cuda=True
     global outs
     for i in tqdm.tqdm(range(len(test_input_path_list))):
+    
         batch_test = test_input_path_list[i:i+1]
+        img=cv2.imread(batch_test[0])
+        img=cv2.resize(img,(720, 453))
         test_input = tensorize_image(batch_test, input_shape, cuda)
         outs = model(test_input)
         out=torch.argmax(outs,axis=1)
@@ -35,10 +38,9 @@ def predict(test_input_path_list,model_path,model_type):
         mask=np.squeeze(outputs_list,axis=0)
         mask_uint8 = mask.astype('uint8')
         
-        mask= cv2.resize(mask_uint8, (720, 453),interpolation=cv2.INTER_NEAREST)
+        mask= cv2.resize(mask_uint8, ((img.shape[1]), (img.shape[0]),interpolation=cv2.INTER_NEAREST)
             
-        img=cv2.imread(batch_test[0])
-        img=cv2.resize(img,(720, 453))
+
         mask_ind   = mask == 1
         cpy_img  = img.copy()
         
