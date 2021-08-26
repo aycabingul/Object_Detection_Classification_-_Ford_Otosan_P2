@@ -23,7 +23,10 @@ predict='data/predict'
 if not os.path.exists(predict):
     os.mkdir(predict)
     
-    
+full_predict='/content/full_predict'
+if not os.path.exists(full_predict):
+    os.mkdir(full_predict)
+        
     
 best_models='models'
 if not os.path.exists(best_models):
