@@ -143,8 +143,10 @@ def train(valid_size,test_size,batch_size,epochs,cuda,input_shape,n_classes,mask
                         outputs = model(batch_input)
                         loss = criterion(outputs, batch_label)
                         val_loss += loss.item()
-                        val_losses.append(val_loss)
-                        break
+                    
+                    val_loss=val_loss/len(valid_input_path_list)
+                    val_losses.append(val_loss)
+                        
         
                     print('validation loss on epoch {}: {}'.format(epoch, val_loss))
                     
@@ -177,22 +179,22 @@ def train(valid_size,test_size,batch_size,epochs,cuda,input_shape,n_classes,mask
         
         draw_graph(val_losses,train_losses,epochs)
     
-#########POLYGON###############
-######### PARAMETERS ##########
-valid_size = 0.3
-test_size  = 0.05
-batch_size = 4
-epochs = 20
-cuda = True
-input_shape = (224, 224)
-n_classes = 2
-MASK_DIR=MASK_POLYGON_DIR
-model=FoInternNet(input_shape,n_classes)
-model_save='/mnt/sdb2/Intern_2/models/Unet_1.pt'
-train_if=False
-############################### 
-#polygon_model
-train(valid_size,test_size,batch_size,epochs,cuda,input_shape,n_classes,MASK_DIR,model,model_save,train_if)
+# #########POLYGON###############
+# ######### PARAMETERS ##########
+# valid_size = 0.3
+# test_size  = 0.05
+# batch_size = 4
+# epochs = 20
+# cuda = True
+# input_shape = (224, 224)
+# n_classes = 2
+# MASK_DIR=MASK_POLYGON_DIR
+# model=FoInternNet(input_shape,n_classes)
+# model_save='/mnt/sdb2/Intern_2/models/Unet_1.pt'
+# train_if=False
+# ############################### 
+# #polygon_model
+# train(valid_size,test_size,batch_size,epochs,cuda,input_shape,n_classes,MASK_DIR,model,model_save,train_if)
 
 
 
@@ -208,7 +210,7 @@ n_classes = 3
 MASK_DIR=MASK_LINE_DIR
 model=SegNet(n_classes)
 model_save='/mnt/sdb2/Intern_2/models/best_line_model.pt'
-train_if=False
+train_if=True
 ############################## 
 #polygon_model
 train(valid_size,test_size,batch_size,epochs,cuda,input_shape,n_classes,MASK_DIR,model,model_save,train_if)

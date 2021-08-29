@@ -143,8 +143,9 @@ def train(valid_size,test_size,batch_size,epochs,cuda,input_shape,n_classes,mask
                         outputs = model(batch_input)
                         loss = criterion(outputs, batch_label)
                         val_loss += loss.item()
-                        val_losses.append(val_loss)
-                        break
+                    val_losses.append(val_loss)
+                    val_losses=val_losses/len(valid_input_path_list)
+                        
         
                     print('validation loss on epoch {}: {}'.format(epoch, val_loss))
                     
