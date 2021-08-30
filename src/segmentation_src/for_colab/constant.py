@@ -1,6 +1,5 @@
 #libraries imported
 import os
-
 IMG_DIR='data/images'
 
 #Write the file path of the mask file to mask_dir
@@ -23,11 +22,16 @@ predict='data/predict'
 if not os.path.exists(predict):
     os.mkdir(predict)
     
+    
 full_predict='/content/full_predict'
 if not os.path.exists(full_predict):
     os.mkdir(full_predict)
         
     
-best_models='models'
-if not os.path.exists(best_models):
-    os.mkdir(best_models)
+crop_image='/content/crop_image'
+if not os.path.exists(crop_image):
+    os.mkdir(crop_image)
+
+meta_image='/content/meta_image'
+if not os.path.exists(meta_image):
+    os.mkdir(meta_image)
