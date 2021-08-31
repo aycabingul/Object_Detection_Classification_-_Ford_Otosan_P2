@@ -10,7 +10,7 @@ for i in tqdm.tqdm(range(NUM_CATEGORIES)):
         try:
             image = cv2.imread(path + '/' + img)
             image_fromarray = Image.fromarray(image, 'RGB')
-            resize_image = image_fromarray.resize((IMG_HEIGHT, IMG_WIDTH))
+            resize_image = image_fromarray.resize((32, 32))
             image_data.append(np.array(resize_image))
             image_labels.append(i)
         except:

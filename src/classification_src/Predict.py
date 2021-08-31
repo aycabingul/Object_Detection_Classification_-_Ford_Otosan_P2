@@ -14,13 +14,13 @@ for img in tqdm.tqdm(imgs):
     try:
         image = cv2.imread(data_dir + '/' +img)
         image_fromarray = Image.fromarray(image, 'RGB')
-        resize_image = image_fromarray.resize((IMG_HEIGHT, IMG_WIDTH))
+        resize_image = image_fromarray.resize((32, 32))
         data.append(np.array(resize_image))
     except:
         print("Error in " + img)
 X_test = np.array(data)
 X_test = X_test/255
-model=models.load_model('sign_classification.h5')
+model=models.load_model('sign_classification_best.h5')
 y = model.predict(X_test)
 pred=np.argmax(y,axis=1)
 
