@@ -20,7 +20,7 @@ for img in tqdm.tqdm(imgs):
 
 X_test = np.array(data)
 X_test = X_test/255
-model=models.load_model('sign_classification_best.h5')
+model=models.load_model('sign_classification_vgg16.h5')
 y = model.predict(X_test)
 pred=np.argmax(y,axis=1)
 
