@@ -14,16 +14,16 @@ from sklearn.metrics import accuracy_score
 import random
 from matplotlib.image import imread
 import tqdm
-np.random.seed(42)
+np.random.seed(40)
 
 from matplotlib import style
 style.use('fivethirtyeight')
 
 
-data_dir = '../../intern_Data/classification/archive'
-train_path = '../../intern_Data/classification/archive/Train'
+data_dir = '../../intern_Data/classification/archive/new'
+train_path = '../../intern_Data/classification/archive/new/Train'
 test_path_ford = '/mnt/sdb2/Intern_2/intern_Data/cropped_valid_box'
-test_path='../../intern_Data/classification/archive/Test'
+
 
 # Resizing the images to 30x30x3
 IMG_HEIGHT = 30

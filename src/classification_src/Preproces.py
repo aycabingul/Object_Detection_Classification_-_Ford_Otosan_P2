@@ -10,7 +10,7 @@ for i in tqdm.tqdm(range(NUM_CATEGORIES)):
         try:
             image = cv2.imread(path + '/' + img)
             image_fromarray = Image.fromarray(image, 'RGB')
-            resize_image = image_fromarray.resize((32, 32))
+            resize_image = image_fromarray.resize((IMG_HEIGHT,IMG_WIDTH ))
             image_data.append(np.array(resize_image))
             image_labels.append(i)
         except:
@@ -30,7 +30,7 @@ image_labels = image_labels[shuffle_indexes]
 
 
 
-X_train, X_val, y_train, y_val = train_test_split(image_data, image_labels, test_size=0.3, random_state=42, shuffle=True)
+X_train, X_val, y_train, y_val = train_test_split(image_data, image_labels, test_size=0.3, random_state=40, shuffle=True)
 
 X_train = X_train/255 
 X_val = X_val/255

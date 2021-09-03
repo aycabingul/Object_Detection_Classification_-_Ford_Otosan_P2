@@ -366,7 +366,7 @@ void draw_detections_v3(image im, detection *dets, int num, float thresh, char *
     // image output
     qsort(selected_detections, selected_detections_num, sizeof(*selected_detections), compare_by_probs);
     for (i = 0; i < selected_detections_num; ++i) {
-            int width = im.h * .002;
+            int width = im.h * .003;
             if (width < 1)
                 width = 1;
 
@@ -380,8 +380,8 @@ void draw_detections_v3(image im, detection *dets, int num, float thresh, char *
             //printf("%d %s: %.0f%%\n", i, names[selected_detections[i].best_class], prob*100);
             int offset = selected_detections[i].best_class * 123457 % classes;
             float red = get_color(2, offset, classes);
-            float green = get_color(1, offset, classes);
-            float blue = get_color(0, offset, classes);
+            float green = get_color(0, offset, classes);
+            float blue = get_color(1, offset, classes);
             float rgb[3];
 
             //width = prob*20+2;
