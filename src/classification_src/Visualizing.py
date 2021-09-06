@@ -28,14 +28,15 @@ plt.show()
 # Visualizing 25 random images from test data
 
 
-test = pd.read_csv(data_dir + '/Test.csv')
-imgs = test["Path"].values
+meta_list = (data_dir + '/Meta')
+imgs=os.listdir(meta_list)
+
 
 plt.figure(figsize=(25,25))
 
 for i in range(1,41):
     ax3=plt.subplot(5,8,i)
-    random_img_path = data_dir + '/' + random.choice(imgs)
+    random_img_path = meta_list + '/' + imgs[i]
     rand_img = imread(random_img_path)
     ax3.set_yticks([])
     ax3.set_xticks([])
