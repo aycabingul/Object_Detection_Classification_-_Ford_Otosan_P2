@@ -32,13 +32,18 @@ def visualize_sign(txt_path,save_box,cropped_path,cropped=False,save=False):
     
     
 
-txt_train_path="/mnt/sdb2/Intern_2/intern_Data/train.txt"
-save_box='result_train_box'
-cropped_path='cropped_train_box'
-visualize_sign(txt_train_path,save_box,cropped_path,cropped=True,save=True)
+# txt_train_path="/mnt/sdb2/Intern_2/intern_Data/train.txt"
+# save_box='result_train_box'
+# cropped_path='cropped_train_box'
+# visualize_sign(txt_train_path,save_box,cropped_path,cropped=True,save=True)
 
 
-txt_valid_path="/mnt/sdb2/Intern_2/intern_Data/valid.txt"
-save_box='result_valid_box'
-cropped_path='cropped_valid_box'
+# txt_valid_path="/mnt/sdb2/Intern_2/intern_Data/valid.txt"
+# save_box='result_valid_box'
+# cropped_path='cropped_valid_box'
+# visualize_sign(txt_valid_path,save_box,cropped_path,cropped=True,save=True)
+
+txt_valid_path="/mnt/sdb2/Intern_2/intern_Data/test.txt"
+save_box='result_test_box'
+cropped_path='cropped_test_box'
 visualize_sign(txt_valid_path,save_box,cropped_path,cropped=True,save=True)
