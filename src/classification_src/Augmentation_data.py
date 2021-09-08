@@ -12,7 +12,7 @@ from skimage import transform
 import random 
 from torchvision import transforms as T
 from PIL import Image
-num_list=[32,31,30,28,27,26,25,12,6]
+num_list=[26]
 for i in tqdm.tqdm(num_list):
     path = data_dir + '/Train/' + str(i)
     images = os.listdir(path)
@@ -29,20 +29,6 @@ for i in tqdm.tqdm(num_list):
         new2_path=path+'/'+image[:-4]+"-2"+".png"
         cv2.imwrite(new2_path,flipUD )
         
-        rotated = rotate(np.array(img),45)
-    
-        new3_path=path+'/'+image[:-4]+"-3"+".png"
-        cv2.imwrite(new3_path,rotated)
 
     
-        transform = AffineTransform(translation=(25,25))
-        wrapShift = warp(np.array(img),transform,mode='wrap')
-        new4_path=path+'/'+image[:-4]+"-4"+".png"
-        cv2.imwrite(new4_path,wrapShift)
 
-        sigma=0.155
-
-        noisyRandom = random_noise(np.array(img),var=sigma**2)
-        new5_path=path+'/'+image[:-4]+"-5"+".png"
-        cv2.imwrite(new5_path,noisyRandom)
-    
