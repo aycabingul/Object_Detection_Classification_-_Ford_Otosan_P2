@@ -25,7 +25,7 @@ plt.tight_layout()
 plt.savefig("classes.png")
 plt.show()
 
-# Visualizing 25 random images from test data
+# 41 meta images
 
 
 meta_list = (data_dir + '/Meta')
@@ -44,3 +44,25 @@ for i in range(1,41):
     plt.imshow(rand_img)
     plt.grid(b=None)
     
+    
+    
+# Random train images
+meta_list = (data_dir + '/Train')
+file=os.listdir(meta_list)
+
+
+
+
+plt.figure(figsize=(25,25))
+
+for i in range(1,41):
+    imgs=[]
+    imgs=os.listdir(meta_list+"/"+file[i])
+    ax3=plt.subplot(5,8,i)
+    random_img_path = meta_list+"/"+file[i] +"/"+ imgs[i+7]
+    rand_img = imread(random_img_path)
+    ax3.set_yticks([])
+    ax3.set_xticks([])
+    plt.savefig("classes_image.png")
+    plt.imshow(rand_img)
+    plt.grid(b=None)
