@@ -26,8 +26,8 @@ for maskname in tqdm.tqdm(img_list):#Access individual elements of the masks_nam
     cpy_img  = img.copy()
     
     img[mask_polygon==1,:] = (255, 0, 125)
-    img[mask_line==2,:]=(0, 0, 255)
-    img[mask_line==3,:]=(38, 255, 255)
+    img[mask_line==1,:]=(0, 0, 255)
+    img[mask_line==2,:]=(38, 255, 255)
 
     
     
