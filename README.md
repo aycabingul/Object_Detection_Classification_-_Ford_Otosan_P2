@@ -2,6 +2,10 @@
 
 In this project, *Lane Segmentation* and *Traffic Sign Detection/Classification* are aimed in the images.
 
+Developers of this project;
+- [Ayça Burcu Bingül](https://www.linkedin.com/in/aycaburcubingul/)
+- [Recep Aydoğdu](https://www.linkedin.com/in/recepayddogdu/)
+
 Some of the technologies used in the project; **Python, OpenCV, Pytorch, TensorFlow, YOLOv4**
 
 The results of the project can be viewed in the video below;
@@ -186,7 +190,10 @@ Images representing the classes in the dataset;
 <p  align="center">
 <img  src="images/classification/classes_image.png"  width="">
 </p> 
-
+Data augmentation was applied to increase the data collected from Turkish highways;
+<p  align="center">
+<img  src="images/classification/augmentation.png"  width="">
+</p>
 Images are cropped from locations detected with the YOLOv4 model;
 <p  align="center">
 <img  src="images/classification/cropped.png"  width="">
