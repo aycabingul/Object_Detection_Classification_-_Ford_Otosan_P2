@@ -210,6 +210,9 @@ Model evaluation;
 The image of the class predicted as a result of the classification was sized to 70% of the short side of the bounding box and added to the upper left corner of the box. Adjusted its length to 40px to prevent it from getting too large if it is over 40px in length.
 
 The [image.c](https://github.com/aycabingul/Object_Detection_Classification_-_Ford_Otosan_P2/blob/main/src/detection_src/yolov4/image.c) file in Darknet has been edited and the bounding box's has been personalized.
+<p  align="center">
+<img  src="images/detection/bounding_box.png"  width="">
+</p> 
 
 Examples of classification results;
 <p  align="center">
